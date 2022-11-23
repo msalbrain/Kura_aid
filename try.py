@@ -1,7 +1,17 @@
 is_scheduler = False
 
-
-queue_schedule = [{
-                ""
-            }
+onetime_schedule = [{
+    "time": None,
+    "phone": None,
+    "msg": "",
+}
 ]
+
+repeat_schedule = [{
+    "time": None,
+    "phone": None,
+    "msg": "",
+}
+]
+
+

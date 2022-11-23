@@ -67,6 +67,8 @@ async def index(request: Request):
     if user:
         if user["name"] == "":
             return unregisteredUser(text, phone_number)
+        # elif user["location"] == "":
+        #     return unregisteredlocation(text, phone_number)
         else:
 
             s = text
@@ -79,11 +81,9 @@ async def index(request: Request):
                 if i.isdigit():
                     for k in s_list[j:]:
                         real_string += k + "*"
-                        print(real_string)
 
                     # real_string = "".join(s_list[j:])
                     # print(real_string)
-
                     break
                 j += 1
             text = real_string[:-1]
