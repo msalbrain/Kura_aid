@@ -1,5 +1,10 @@
-from fastapi import FastAPI, Request, responses
+from fastapi import FastAPI, Request, responses, BackgroundTasks
 import time
+
+is_onetime = False
+is_repeat = False
+
+
 
 app = FastAPI()
 
@@ -11,6 +16,7 @@ fake_db = {
     "09032097223":
         {
             "location": "Ikpoba Okha, Edo Satte",
+            "state":"",
             "name": "",
             "phone": "902346829",
             "joined": 897643289,
@@ -56,7 +62,7 @@ def check():
 
 
 @app.post("/app", response_class=responses.PlainTextResponse)
-async def index(request: Request):
+async def index(request: Request, back: BackgroundTasks):
     form = await request.form()
     session_id = form["sessionId"]
     serviceCode = form["serviceCode"]

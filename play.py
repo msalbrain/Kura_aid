@@ -1,23 +1,17 @@
-s = "salman*1*3"
-s_list = s.split("*")
-# e.g s_list = ['salman', '1']
+d = {
+    "Edo": ["oredo"]
+}
 
-j = 0
-real_string = ""
-for i in s_list:
-    if i.isdigit():
-        for i in s_list[j:]:
-            real_string += i + "*"
-            print(real_string)
+loc = d.get(state, None)
 
-        # real_string = "".join(s_list[j:])
-        # print(real_string)
+if loc == None:
+    return "END "
 
-        break
-    j += 1
-text = real_string[:-1]
+for i in d[state]:
+    response += i
 
 
-if __name__ == '__main__':
 
-    print(text)
+
+if loc == None and state == "":
+    return "CON please provide your state"
