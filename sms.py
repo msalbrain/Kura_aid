@@ -35,7 +35,4 @@ class SMS:
             print('Encountered an error while sending: %s' % str(e))
 
 
-if __name__ == '__main__':
-    s = SMS()
-    s.send("you are not alone😍", None)
 
